@@ -1,0 +1,20 @@
+$primary: #191C24;
+$secondary: #6C7293;
+$light: #fff;
+$dark: #000;
+$danger: #DC3545;
+$success: #198754;
+$warning: #FFAB00;
+
+$spacer: 1rem;
+
+//################## MARGINS ##################
+.mt-10 {
+  margin-top: $spacer * 6;
+}
+
+.mt-15 {
+    margin-top: $spacer * 12;
+  }
+
+@import "../node_modules/bootstrap/scss/bootstrap";
