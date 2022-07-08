@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-WatchbeansApplication<watchbeans>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.watchbeans.watchbeans.WatchbeansApplication",
+            "projectName": "watchbeans",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
