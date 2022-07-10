@@ -13,7 +13,7 @@ import com.watchbeans.watchbeans.repositories.ProductRepository;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
-@RequestMapping("/produtos")
+@RequestMapping("/produto")
 public class ProductController {
 
     public ProductController() {
@@ -35,6 +35,23 @@ public class ProductController {
     @RequestMapping(value = "/listar", method = RequestMethod.GET)
     public List<Product> listProducts() {
         return productRepository.findAll();
+    }
+
+    @RequestMapping(value = "/listar/{id}", method = RequestMethod.GET)
+    public Product findProduct(@PathVariable("id") Long id) {
+        return productRepository.findProduct(id);
+    }
+
+    @RequestMapping(value = "/atualizar_preco", method = RequestMethod.PUT)
+    public String updateProduct(@RequestBody Product product) {
+        productRepository.updatePrice(product.getPrice(), product.getId());
+        return "Atualizado com sucesso";
+    }
+
+    @RequestMapping(value = "/deletar", method = RequestMethod.DELETE)
+    public String deleteProduct(@RequestBody Product product) {
+        productRepository.deleteProduct(product.getId());
+        return "Deletado com sucesso";
     }
 
 }
