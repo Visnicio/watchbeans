@@ -1,12 +1,15 @@
 package com.watchbeans.watchbeans.controllers;
 
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.neo4j.Neo4jProperties.Authentication;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.watchbeans.watchbeans.repositories.ManagerRepository;
@@ -15,7 +18,7 @@ import com.watchbeans.watchbeans.models.Manager;
 
 
 @RestController
-@RequestMapping("/manager")
+@RequestMapping("/gerente")
 @CrossOrigin(origins = "*")
 public class ManagerController {
     
@@ -35,10 +38,17 @@ public class ManagerController {
         }
     }
 
-    @RequestMapping(value = "/findAll", method = RequestMethod.GET)
+    @RequestMapping(value = "/listar", method = RequestMethod.GET)
     public List<Manager> findAll() {
         return this.managerRepository.findAll();
     }
+
+    @RequestMapping(value = "/usuario_logado", method = RequestMethod.GET)
+    @ResponseBody
+    public String getCurrentUserId(Principal principal) {
+        return principal.getName();
+    }   
+
 
     // @RequestMapping(value = "/login", method = RequestMethod.POST)
     // public @ResponseBody Professor login(@RequestBody Professor professor){
