@@ -32,4 +32,9 @@ public interface ProductRepository extends JpaRepository<Product, Long>{
 
     @Query(value = "SELECT * FROM produto WHERE cod_produto = :id", nativeQuery = true)
     public Product findProduct(@Param("id")Long id);
+
+    @Modifying
+    @Transactional
+    @Query(value = "UPDATE produto SET cod_venda = :id_venda WHERE cod_produto = :id_produto", nativeQuery = true)
+    public Product insertIntoSale(@Param("id_venda")Long sale_id, @Param("id_produto")Long product_id);
 }

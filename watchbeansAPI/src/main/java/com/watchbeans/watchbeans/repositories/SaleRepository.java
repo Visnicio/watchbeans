@@ -25,6 +25,8 @@ public interface SaleRepository extends JpaRepository<Sale, Long>{
     @Query(value = "UPDATE venda SET valor_venda = :newPrice WHERE cod_venda = :id", nativeQuery = true)
     public void updatePrice(@Param("newPrice")Float price, @Param("id")Long id);
 
-    
+    @Query(value = "INSERT INTO venda(status) VALUES (:status)", nativeQuery = true)
+    public Sale insertSale(@Param("status")String status);
+
 
 }

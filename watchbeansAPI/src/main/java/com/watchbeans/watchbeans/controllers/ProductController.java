@@ -50,9 +50,9 @@ public class ProductController {
     }
 
     @RequestMapping(value = "/atualizar", method = RequestMethod.PUT)
-    public String updateProduct(@RequestBody Product product) {
+    public Product updateProduct(@RequestBody Product product) {
         productRepository.updateProduct(product.getName(), product.getModel(), product.getPrice(), product.getId());
-        return "Atualizado com sucesso";
+        return productRepository.findProduct(product.getId());
     }
 
     @RequestMapping(value = "/deletar", method = RequestMethod.DELETE)
@@ -60,5 +60,11 @@ public class ProductController {
         productRepository.deleteProduct(product.getId());
         return "Deletado com sucesso";
     }
+
+    @RequestMapping(value = "/incluir_venda", method = RequestMethod.DELETE)
+    public Product insertIntoSale(@RequestBody Long sale_id, @RequestBody Long product_id) {
+        return productRepository.insertIntoSale(sale_id, product_id);
+    }
+
 
 }
