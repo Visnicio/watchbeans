@@ -4,26 +4,88 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Watchbeans</title>
+    <title>Watchbeans Produto</title>
 
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 </head>
-<body>
-    <nav class="navbar navbar-expand-sm navbar-light bg-primary">
+<body class="bg-dark">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-primary d-flex justify-content-center">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Teste</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
-                aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarID">
-                <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    
+            <a class="navbar-brand me-0" href="#">Watchbeans</a>
+            <div class="d-flex justify-content-center">
+                <ul class="navbar nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="../index.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="../pages/about.php">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="../pages/contact.php">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="d-flex">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
+                    aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarID">
+                    <div class="navbar-nav">
+                        <button class="btn btn-outline-success me-3">Login</button>
+                        <button class="btn btn-success">Register</button>
+                    </div>
                 </div>
             </div>
         </div>
     </nav>
+    <div class="container mt-15">
+        <div class="row">
+            <div class="col-sm-3 col-12">
+                <div class="card bg-primary">
+                   
+                    <div class="card-body text-secondary">
+                        <h5 class="card-title text-light">Rolex Day-Date</h5>
+                        <h6 class="card-subtitle mb-2 ">$20.000</h6>
+                        <p class="card-text">Oyster Perpetual Day-Date 40 em ouro amarelo 18 quilates com mostrador branco e luneta canelada com pulseira presidente..</p>
+                        <img src="../img/paul frankin.jpg" class="card-img-top" alt="...">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-12">
+                <div class="card bg-primary">
+                    <div class="card-body text-secondary">
+                        <h5 class="card-title text-light">Rolex Day-Date</h5>
+                        <h6 class="card-subtitle mb-2 ">$65.000</h6>
+                        <p class="card-text"> Day-Date 40 em ouro everose 18 quilates com mostrador chocolate cravejado de diamantes e luneta canelada com pulseira president.</p>
+                        <img src="../img/rose.jpg" class="card-img-top" alt="...">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-12">
+                <div class="card bg-primary">
+                    <div class="card-body text-secondary">
+                        <h5 class="card-title text-light">Rolex Milgauss</h5>
+                        <h6 class="card-subtitle mb-2 ">$13.500</h6>
+                        <p class="card-text">Apresenta um mostrador preto intenso com marcadoresde horas luminescentes, seu vidro de safira verde.</p>
+                        <img src="../img/nova.jpg" class="card-img-top" alt="...">
+                    </div>
+                </div>
+            </div>
+             <div class="col-sm-3 col-12">
+                <div class="card bg-primary">
+                    <div class="card-body text-secondary">
+                        <h5 class="card-title text-light">Rolex Explorer</h5>
+                        <h6 class="card-subtitle mb-2 ">$32.000</h6>
+                        <p class="card-text">Explorer em aço oystersteel destaca-se pelo seu mostrador preto com os característicos algarismos 3, 6 e 9 com exibição chromalight.</p>
+                        <img src="../img/teste.jpg" class="card-img-top" alt="...">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
 </body>
-</html>
+</html> 
