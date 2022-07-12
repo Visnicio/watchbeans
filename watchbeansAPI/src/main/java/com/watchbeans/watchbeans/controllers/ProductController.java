@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
 @RequestMapping("/produto")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ProductController {
 
     public ProductController() {
@@ -43,8 +44,14 @@ public class ProductController {
     }
 
     @RequestMapping(value = "/atualizar_preco", method = RequestMethod.PUT)
-    public String updateProduct(@RequestBody Product product) {
+    public String updatePrice(@RequestBody Product product) {
         productRepository.updatePrice(product.getPrice(), product.getId());
+        return "Atualizado com sucesso";
+    }
+
+    @RequestMapping(value = "/atualizar", method = RequestMethod.PUT)
+    public String updateProduct(@RequestBody Product product) {
+        productRepository.updateProduct(product.getName(), product.getModel(), product.getPrice(), product.getId());
         return "Atualizado com sucesso";
     }
 

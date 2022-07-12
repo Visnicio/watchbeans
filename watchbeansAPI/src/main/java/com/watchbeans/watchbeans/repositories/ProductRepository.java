@@ -19,6 +19,11 @@ public interface ProductRepository extends JpaRepository<Product, Long>{
     @Transactional
     @Query(value = "UPDATE produto SET preco_produto = :newPrice WHERE cod_produto = :id", nativeQuery = true)
     public void updatePrice(@Param("newPrice")Float price, @Param("id")Long id);
+
+    @Modifying
+    @Transactional
+    @Query(value = "UPDATE produto SET nome_produto = :newName, modelo_produto = :newModel, preco_produto = :newPrice WHERE cod_produto = :id", nativeQuery = true)
+    public void updateProduct(@Param("newName")String name, @Param("newModel")String model, @Param("newPrice")Float price, @Param("id")Long id);
     
     @Modifying
     @Transactional
