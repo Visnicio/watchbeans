@@ -21,6 +21,8 @@ public class Sale {
     @Column(name = "cod_produto", nullable = false)
     private Long product_id;
 
+    @Column(name = "status", nullable = false)
+    private String status;
 
     public Long getId() {
         return this.id;
@@ -36,6 +38,14 @@ public class Sale {
 
     public void setProduct_id(Long product_id) {
         this.product_id = product_id;
+    }
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
 

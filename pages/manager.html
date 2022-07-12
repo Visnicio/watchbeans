@@ -14,18 +14,18 @@
 <body class="bg-dark">
     <nav class="navbar navbar-expand-sm navbar-dark bg-primary d-flex justify-content-center">
         <div class="container-fluid">
-            <a class="navbar-brand me-0" href="#">Watchbeans</a>
+            <a class="navbar-brand me-0" href="index.html">Watchbeans</a>
             <div class="d-flex justify-content-center">
                 <ul class="navbar nav">
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="../index.php">Home</a>
+                        <a class="nav-link text-light" href="index.html">Cliente</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="../pages/about.php">About</a>
+                        <a class="nav-link text-light" href="manager.html">Gerenciador</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link text-light" href="../pages/contact.php">Contact</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <div class="d-flex">
@@ -184,14 +184,15 @@
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
-            success: function(retorno){
-                if(retorno == "Atualizado com sucesso"){
-                    alert("Produto atualizado com sucesso!");
-                    listarProdutos();
-                    $("#modal-editar").modal("hide");
-                }else{
-                    alert("Erro ao atualizar produto!");
-                }
+            success: function(retorno, text, xhr){
+                console.log(retorno);
+                $("#modal-editar").modal("hide");
+                listarProdutos();
+            },
+            error: function(xhr, text, error){
+                console.log(xhr.status);
+                console.log(error);
+                alert("Erro ao atualizar produto!");
             }
         });
     }
