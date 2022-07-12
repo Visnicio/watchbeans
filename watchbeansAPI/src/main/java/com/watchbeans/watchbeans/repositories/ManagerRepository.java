@@ -15,7 +15,7 @@ public interface ManagerRepository extends JpaRepository<Manager, Long>{
     //public Professor login(String matricula, String senha);
 
     //Aluno save(Aluno aluno);
-    //uma classe que é temporaria para mandar os dados para o banco
+    //uma classe que é temporaria para mandar os dados para o banco S é a classe temp e a T é a classe que esta no banco
     //<S extends T> S save(S name);
     // <newAluno extends Aluno> newAluno save(newAluno aluno);
 
